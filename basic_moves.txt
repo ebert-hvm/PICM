@@ -1,0 +1,13 @@
+G0, G1 - linear move
+G4 - wait
+G28 - home
+G29 - bed leveling
+G60 - save current position
+G61 - return to saved position
+G90 - absolute positioning
+G91 - relative positioning
+G92 - set position
+M17 - enable steppers
+M18, M84 - disenable steppers
+M119 - endstop state
+M999 - STOP restart

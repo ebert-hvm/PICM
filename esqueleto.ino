@@ -1,4 +1,5 @@
 #include <stdlib.h> // abs()
+#include <HCSR04.h>
 
 const int x_range = 500, y_range = 500; // tamanho em milimetros da area a ser analisada
 const int variacao_minima = 10; // diferenca minima pra comparar 2 distancias
@@ -94,10 +95,10 @@ void start_measurement()
 
 void setup()
 {
+    // configuracoes iniciais
+
     height = obter_distancia(); // altura ate o objeto no meio
     cur_x = x_range/2, cur_y = y_range/2, cur_z = height; // comecar do meio
-
-    // configuracoes iniciais
 
     scan(); // escanear objeto
     start_measurement(); // comecar a fazer as medidas com a sonda

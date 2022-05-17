@@ -1,0 +1,105 @@
+#include <HCSR04.h>
+
+#define p_trigger 4
+#define p_echo 5
+
+UltraSonicDistanceSensor distanceSensor(p_trigger, p_echo);
+int dist;
+
+const int stepPin_z = 6;
+const int cimaPin_z = 7;
+
+const int stepPin_y = 8;
+const int dirPin_y = 9;
+
+const int stepPin_x = 10;
+const int dirPin_x = 11;
+
+void setup()
+{
+    Serial.begin(9600);
+
+    pinMode(6, OUTPUT);
+    pinMode(7, OUTPUT);
+
+    pinMode(8, OUTPUT);
+    pinMode(9, OUTPUT);
+
+    pinMode(10, OUTPUT);
+    pinMode(11, OUTPUT);
+
+    digitalWrite(dirPin_z, LOW);
+    digitalWrite(cimaPin_z, LOW);
+
+    digitalWrite(direitaPin_y, LOW);
+    digitalWrite(esquerdaPin_y, LOW);
+
+    digitalWrite(frentePin_x, LOW);
+    digitalWrite(trasPin_x, LOW);
+}
+
+void loop()
+{
+    int cont = 0;
+    int i;
+
+    dist = distanceSensor.measureDistanceCm();
+    Serial.print("Distancia: ");
+    Serial.print(dist);
+    Serial.println(" cm");
+    Serial.println("-----------------------------");
+    delay(500);
+
+    if (dist > 0 and cont == 0) {
+        digitalWrite(baixoPin_z, HIGH);
+        digitalWrite(cimaPin_z, LOW);
+        delay(500);
+    }
+
+    if (dist == 0) {
+        digitalWrite(baixoPin_z, LOW);
+        digitalWrite(cimaPin_z, LOW);
+        cont = 1;
+    }
+
+    if (cont == 1) {
+        for (i = 0; i < 200; i++) {
+            digitalWrite(baixoPin_z, LOW);
+            digitalWrite(cimaPin_z, HIGH);
+        }
+        cont = 2;
+        int dist_2 = dist;
+    }
+
+    if (cont == 2) {
+        for (i = 0; i < 200; i++) {
+            digitalWrite(direitaPin_y, HIGH);
+            digitalWrite(esquerdaPin_y, LOW);
+        }
+        cont = 3;
+    }
+
+    if (cont == 3 and dist == dist_2) {
+        for (i = 0; i < 200; i++) {
+            digitalWrite(baixoPin_z, HIGH);
+            digitalWrite(cimaPin_z, LOW);
+        }
+        cont = 1;
+    }
+
+    if (cont == 3 and dist > dist_2) {
+        for (i = 0; i < 200; i++) {
+            digitalWrite(frentePin_x, HIGH);
+            digitalWrite(trasPin_x, LOW);
+        }
+        cont = 4;
+    }
+
+    if (cont == 4) {
+        for (i = 0; i < 200; i++) {
+            digitalWrite(direitaPin_y, LOW);
+            digitalWrite(esquerdaPin_y, HIGH);
+        }
+        cont = 3;
+    }
+}
