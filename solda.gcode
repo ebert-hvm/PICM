@@ -1,0 +1,184 @@
+; deslocamento linear peca de solda
+; 42 medidas com espaçamento de 1mm cada, numa peca de comprimento 4.2 cm
+; gap z = 1.5mm
+
+
+; setando a posicao inicial como a origem
+G92 X0 Y0 ; setando x e y na origem
+G28 Z ; home z
+G0 Z1.5 ; Z gap
+G0 Y-700 ; indo para o inicio
+
+G91 ; relative
+
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G0 Z-1.7
+G4 P30000
+G0 Z1.7 Y33.3
+
+G91 ; absolute positioning
+G0 X0 Y0 ; back to home
